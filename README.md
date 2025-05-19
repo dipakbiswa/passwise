@@ -35,24 +35,34 @@ pnpm add passwise
 ### Basic Example
 
 ```tsx
-import React, { useState } from 'react';
-import { PasswordStrengthMeter } from 'passwise';
+import React, { useState } from "react";
+import { PasswordStrengthMeter } from "passwise";
 
 function PasswordForm() {
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
 
   return (
-
-      Password
+    <div>
       <input
-        id="password"
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
 
-
-
+      <PasswordStrengthMeter
+        password={password}
+        theme="dark"
+        policy={{
+          minLength: 8,
+          mustContain: {
+            lowercase: true,
+            uppercase: true,
+            number: true,
+            symbol: true,
+          },
+        }}
+      />
+    </div>
   );
 }
 ```
@@ -79,7 +89,6 @@ function PasswordFormWithPolicy() {
 
   return (
 
-      Password
       <input
         id="password"
         type="password"
@@ -87,6 +96,11 @@ function PasswordFormWithPolicy() {
         onChange={(e) => setPassword(e.target.value)}
       />
 
+    <PasswordStrengthMeter
+        password={password}
+        theme="dark"
+        policy={passwordPolicy}
+      />
 
 
   );
