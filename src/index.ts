@@ -1,5 +1,5 @@
 // Import CSS
-import "./styles.css";
+import "./styles/index.css";
 
 // Export components
 export * from "./components";
