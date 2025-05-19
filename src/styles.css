@@ -1,0 +1,6 @@
+/* Import Tailwind directives */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Any other global styles can go here */
