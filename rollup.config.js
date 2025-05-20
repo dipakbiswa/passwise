@@ -31,13 +31,11 @@ module.exports = [
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss({
         config: {
-          path: "./postcss.config.cjs", // Updated to use .cjs extension
+          path: "./postcss.config.cjs",
         },
         extensions: [".css"],
         minimize: true,
-        inject: {
-          insertAt: "top",
-        },
+        extract: "index.css", // Extract CSS to a separate file instead of injecting
       }),
       terser(),
     ],
