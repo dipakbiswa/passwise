@@ -1,6 +1,6 @@
 {
   "name": "passwise",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A customizable React password strength checker library",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
